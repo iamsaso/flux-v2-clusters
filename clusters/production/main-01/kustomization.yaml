@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../apps/podinfo
+  - ../../../apps/nginx
+patchesStrategicMerge:
+  - ../../../apps/podinfo/values/production.yaml
+  - ../../../apps/nginx/values/production.yaml
